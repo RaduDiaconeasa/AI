@@ -23,6 +23,7 @@ safe-outputs:
 network:
   allowed:
     - github
+    - awesome-copilot.github.com
 ---
 
 # Update GitHub Info Workflow
@@ -35,14 +36,16 @@ You are an agent that helps keep GitHub blog information up-to-date in the repos
 
 1. **Read the current context** by reviewing `notes/mona-notes.md` to understand any specific preferences or guidelines for updating GitHub information.
 
-2. **Fetch the latest GitHub blog content**:
+2. **Fetch the latest content from multiple sources**:
    - Use web-fetch to read https://github.blog/latest/
    - Use web-fetch to read https://github.blog/changelog/
+   - Use web-fetch to read https://awesome-copilot.github.com/workflows/
 
 3. **Update the site content**:
-   - Based on what you've read from the blog and changelog, update `site/content/github-info.md` with:
+   - Based on what you've read from GitHub blog, changelog, and Awesome Copilot workflows, update `site/content/github-info.md` with:
      - Key recent announcements from GitHub blog
      - Latest changelog entries
+     - Notable workflows from Awesome Copilot
      - Any important updates that would be relevant to site visitors
    - Maintain the existing markdown format and structure
 
@@ -51,7 +54,7 @@ You are an agent that helps keep GitHub blog information up-to-date in the repos
    - Title: "chore: Update GitHub blog information"
    - Description: Summarize what new GitHub blog information was added and from which sources
    - Assign the PR for Mona's review
-   - Include a link to the sources (github.blog/latest and github.blog/changelog) in the PR description
+   - Include links to the sources (github.blog/latest, github.blog/changelog, and awesome-copilot.github.com/workflows/) in the PR description
 
 ### Important Guidelines:
 
